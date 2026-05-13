@@ -1,5 +1,6 @@
 require( 'dotenv' ).config();
 const { Pool } = require( 'pg' );
+const bcrypt = require( 'bcryptjs' );
 
 const pool = new Pool({
     connectionString: process.env.DATABASE_URI
@@ -22,8 +23,10 @@ const pool = new Pool({
 // }
 exports.newUser = async ( username, email, password ) => {
     try {
+        const hashedPassword = await bcrypt.hash( password, 10 );
         console.log( "Seeding" );
-        await pool.query( `INSERT INTO users ( username, email, password ) VALUES ( $1, $2, $3 )`, [ username, email, password ] );
+        await pool.query( `INSERT INTO users ( username, email, password ) VALUES ( $1, $2, $3 )`,
+                                [ username, email, hashedPassword ] );
         console.log( "User created successfully" );
     } catch ( err ) {
         console.log( err );
@@ -33,6 +36,7 @@ exports.getUserByUsername = async ( username ) => {
     try {
         const { rows } = await pool.query( `SELECT * FROM users WHERE username = $1`, [ username ] );
         return rows[0];
+        
     } catch ( err ) {
         console.log( err );
     }
@@ -44,4 +48,10 @@ exports.getUserById = async ( id ) => {
     } catch ( err ) {
         console.log( err );
     }
+}
+
+//messages table
+exports.createNewMessage = async ( id, title, message ) => {
+    console.log( "Creating new message..." );
+    await pool.query( 'INSERT INTO usermessages ( user_id, title, message ) VALUES ( $1, $2, $3 ) ', [ id, title, message ] );
 }

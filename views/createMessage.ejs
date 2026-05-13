@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>Create Message</title>
 </head>
 <body>
-    <form action="/login" method="post">
-        <h2>Please log in</h2>
+    <form action="/<%= user.id %>/create-new-message" method="post">
+        <h2>Create New Message</h2>
         <% if ( locals.errors ) { %>
             <ul>
                 <% errors.forEach( error => { %>
@@ -15,12 +15,11 @@
                 <% } ) %>
             </ul>
         <% } %>
-        <label for="username">Username: <input type="text" id="username" name="username" required></label>
+        <label>Message Title: <input type="text" name="title"></label>
         <br>
-        <label for="password">Password: <input type="password" id="password" name="password" required></label>
+        <label>Message Content: <textarea name="message"></textarea></label>
         <br>
-        <br>
-        <button type="submit">Login</button>
+        <button type="submit">Post Message</button>
     </form>
 </body>
 </html>

@@ -8,6 +8,13 @@
 <body>
     <form action="/sign-up" method="post">
         <h2>Sign Up</h2>
+        <% if ( locals.errors ) { %>
+            <ul>
+                <% errors.forEach( error => { %>
+                    <li><%= error.msg %></li>
+                <% } ) %>
+            </ul>
+        <% } %>
         <label for="username">Username: <input type="text" id="username" name="username" required></label>
         <br>
         <label for="email">Email: <input type="email" id="email" name="email" ></label>
