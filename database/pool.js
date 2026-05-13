@@ -11,7 +11,8 @@ const pool = new Pool({
 //         id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
 //         username VARCHAR(255) NOT NULL,
 //         email VARCHAR(255) NOT NULL UNIQUE,
-//         password VARCHAR(255) NOT NULL
+//         password VARCHAR(255) NOT NULL,
+//         membership TEXT,
 //     )` );
 
 //     await pool.query( `CREATE TABLE IF NOT EXISTS userMessages (
@@ -49,9 +50,24 @@ exports.getUserById = async ( id ) => {
         console.log( err );
     }
 }
+exports.updateMembershipStatus = async ( id, status ) => {
+    try {
+        await pool.query( `UPDATE users SET membership = ($1) WHERE id = ($2)`, [ status, id ] );
+    } catch ( err ) {
+        console.log( err );
+    }
+}
 
 //messages table
 exports.createNewMessage = async ( id, title, message ) => {
     console.log( "Creating new message..." );
     await pool.query( 'INSERT INTO usermessages ( user_id, title, message ) VALUES ( $1, $2, $3 ) ', [ id, title, message ] );
+}
+exports.getAllMessages = async () => {
+    const { rows } = await pool.query( `
+        SELECT users.username, users.membership, usermessages.title, usermessages.message, usermessages.timestamp
+            FROM usermessages LEFT JOIN users
+            ON usermessages.user_id = users.id ORDER BY timestamp DESC;
+    `)
+    return rows;
 }

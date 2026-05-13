@@ -15,6 +15,9 @@
                 <% } ) %>
             </ul>
         <% } %>
+        <% if ( locals.message ) { %>
+            <% console.log( message ) %>
+        <% } %>
         <label for="username">Username: <input type="text" id="username" name="username" required></label>
         <br>
         <label for="password">Password: <input type="password" id="password" name="password" required></label>

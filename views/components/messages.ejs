@@ -1,0 +1,15 @@
+<% if ( locals.messages ) { %>
+    <ul>
+        <% messages.forEach( message => { %>
+            <li class="<% if ( locals.user ) { %>activeUser<% } else { %>inactiveUser<% } %>">
+                <span>
+                    <%= message.username %> 
+                    <% if ( message.membership === 'member' ) { %> (Member) <% } %>
+                </span>
+                <h3><%= message.title %></h3>
+                <p><%= message.message %></p>
+                <small>Posted at: <%= message.timestamp %></small>
+            </li>
+        <% } ) %>
+    </ul>
+<% } %>

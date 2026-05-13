@@ -9,11 +9,14 @@
     <% if ( locals.user ) { %>
         <p>Welcome, <%= user.username %>!</p>
         <a href="/<%= user.id %>/create-new-message">Create New Message</a>
+        <a href="/<%= user.id %>/become-member">Gain Membership</a>
         <a href="/logout">Logout</a>
+        <%- include( 'components/messages' ) %>
     <% } else { %>
         <h1>Welcome to the home page</h1>
         <a href="/sign-up">Sign Up</a>
         <a href="/login">Login</a>
+        <%- include( 'components/messages' ) %>
     <% } %>
 </body>
 </html>

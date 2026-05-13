@@ -11,5 +11,7 @@ userRouter.post( '/login', userController.loginControllerPost );
 userRouter.get( '/logout', userController.logoutController );
 userRouter.get( '/:id/create-new-message', messagesController.createNewMessageGet );
 userRouter.post( '/:id/create-new-message', messagesController.createNewMessagePost );
+userRouter.get( '/:id/become-member', userController.becomeMemberGet );
+userRouter.post( '/:id/become-member', userController.becomeMemberPost );
 
 module.exports = userRouter;

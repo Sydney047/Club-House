@@ -6,7 +6,7 @@ module.exports = function( passport ) {
     passport.use( new LocalStrategy( async ( username, password, done ) => {
         const user = await db.getUserByUsername( username );
         if ( !user ) {
-            console.log( "User not found:", user );
+            console.log( "User not found:" );
             return done( null, false, { message: 'Incorrect username.' } );
         }
         const match = await bcrypt.compare( password, user.password );
