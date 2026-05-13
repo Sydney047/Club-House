@@ -10,6 +10,9 @@ const app = express();
 app.set( 'views', path.join( __dirname, 'views' ) );
 app.set( 'view engine', 'ejs' );
 app.use( express.urlencoded({ extended: true }) );
+//static files
+const staticPath = path.join( __dirname, 'public' );
+app.use( express.static( staticPath ) );
 //session settings
 app.use( session({ secret: "cats", resave: false, saveUninitialized: false }) );
 //passport settings

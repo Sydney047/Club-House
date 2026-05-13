@@ -47,7 +47,7 @@ exports.becomeMemberGet = ( req, res ) => {
 }
 exports.becomeMemberPost = async ( req, res ) => {
     const clubhousePassword = process.env.CLUBHOUSE_PASSWORD;
-    console.log( typeof clubhousePassword)
+    
     if ( req.body.clubhousePassword === clubhousePassword ) {
         console.log( 'Updating membership...' );
         await db.updateMembershipStatus( req.user.id, 'member' );

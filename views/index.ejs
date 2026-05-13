@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="indexStyles.css">
     <title>Home Page</title>
 </head>
 <body>
+    <%- include( 'components/header' ) %>
     <% if ( locals.user ) { %>
         <p>Welcome, <%= user.username %>!</p>
         <a href="/<%= user.id %>/create-new-message">Create New Message</a>
@@ -14,9 +16,8 @@
         <%- include( 'components/messages' ) %>
     <% } else { %>
         <h1>Welcome to the home page</h1>
-        <a href="/sign-up">Sign Up</a>
-        <a href="/login">Login</a>
         <%- include( 'components/messages' ) %>
     <% } %>
+    <%- include( 'components/footer' ) %>
 </body>
 </html>
