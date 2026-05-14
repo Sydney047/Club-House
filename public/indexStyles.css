@@ -1,0 +1,204 @@
+/* Header Styles */
+header {
+    display: flex;
+    box-sizing: border-box;
+    padding: 1ch;
+    width: 100%;
+    align-items: center;
+    gap: 4px;
+}
+header svg, footer svg {
+    height: 3ch;
+    width: 3ch;
+}
+header span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+header nav {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+    box-sizing: border-box;
+    padding: 1ch;
+    padding-right: 2ch;
+    align-items: center;
+}
+header nav a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Online Container Styles */
+.onlineContainer {
+    display: grid;
+    grid-template: 1fr / clamp(150px, 15%, 300px) 3fr;
+}
+.onlineContainer nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 1ch;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 5ch 0;
+}
+.onlineContainer nav div {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+.onlineContainer nav div svg:first-child {
+    height: 1.1em;
+    width: 1.1em;
+}
+.onlineContainer nav div svg:nth-child(2) {
+    height: .7em;
+    width: .7em;
+}
+.onlineContainer nav div span {
+    position: relative;
+}
+.onlineContainer nav div span::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    bottom: .7ch;
+    right: 0;
+}
+.onlineContainer nav a, .onlineContainer nav p {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+.onlineContainer nav svg {
+    height: 1.3em;
+    width: 1.3em;
+}
+.onlineContainer main {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.onlineContainer main span {
+    width: 100%;
+}
+.onlineContainer main ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.onlineContainer main ul li span {
+    align-self: flex-start;
+}
+.onlineContainer main ul li span svg {
+    height: 1em;
+    width: 1em;
+}
+
+/* Offline Container Styles */
+.offlineContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16px;
+    box-sizing: border-box;
+}
+.offlineContainer > span, .onlineContainer main > span {
+    width: 100%;
+    position: relative;
+    left: 3ch;
+    font-size: 1.3em;
+}
+.offlineContainer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+ul li {
+    list-style: none;
+    box-sizing: border-box;
+    padding: 2ch;
+    border: 2px solid black;
+    border-radius: 8px;
+    width: clamp( 250px, 32%, 400px );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.inactiveUser span {
+    filter: blur( 5px );
+}
+div ul li span {
+    align-self: flex-start;
+    display: flex;
+    gap: 4px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+div ul li span svg:nth-child(2) {
+    height: .8em;
+    width: .9em;
+    align-self: center;
+}
+div ul li h3 {
+    margin: 8px 0 4px 0;
+}
+div ul li p {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1.5px solid black;
+    padding: 0 1ch 2ch 1ch;
+}
+div ul li small {
+    align-self: flex-end;
+    display: flex;
+    gap: 4px;
+    font-size: .8em;
+}
+div ul li small svg {
+    height: 1em;
+    width: 1em;
+    align-self: center;
+}
+
+/* Footer Styles */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: 2ch 1ch;
+    width: 100%;
+    align-items: flex-end;
+}
+footer div:first-child {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .contactDiv {
+    display: flex;
+    padding: 2ch 0;
+    gap: 5px;
+}
+footer div:last-child {
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1ch 2ch 1ch 1ch;
+    height: calc( 2ch + 4ch );
+}
