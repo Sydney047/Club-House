@@ -1,0 +1,101 @@
+/* Header Styles */
+header {
+    display: flex;
+    box-sizing: border-box;
+    padding: 1ch;
+    width: 100%;
+    align-items: center;
+    gap: 4px;
+}
+header svg, footer svg {
+    height: 3ch;
+    width: 3ch;
+}
+header span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+header nav {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+    box-sizing: border-box;
+    padding: 1ch;
+    padding-right: 2ch;
+    align-items: center;
+}
+header nav a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+.newMessageForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    max-width: 400px;
+    box-sizing: border-box;
+    padding: 2ch 5ch;
+    border: 1px solid black;
+    border-radius: 16px;
+    justify-content: center;
+}
+.newMessageForm input, .newMessageForm textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1ch;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+.newMessageForm textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+.newMessageForm button {
+    padding: 1ch 2ch;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 150px;
+    margin-top: 8px;
+}
+
+
+/* Footer Styles */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: 2ch 1ch;
+    width: 100%;
+    align-items: flex-end;
+}
+footer div:first-child {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .contactDiv {
+    display: flex;
+    padding: 2ch 0;
+    gap: 5px;
+}
+footer div:last-child {
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1ch 2ch 1ch 1ch;
+    height: calc( 2ch + 4ch );
+}
