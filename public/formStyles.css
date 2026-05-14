@@ -1,0 +1,120 @@
+/* Header Styles */
+header {
+    display: flex;
+    box-sizing: border-box;
+    padding: 1ch;
+    width: 100%;
+    align-items: center;
+    gap: 4px;
+}
+header svg, footer svg {
+    height: 3ch;
+    width: 3ch;
+}
+header span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+header nav {
+    margin-left: auto;
+    display: flex;
+    gap: 16px;
+    box-sizing: border-box;
+    padding: 1ch;
+    padding-right: 2ch;
+    align-items: center;
+}
+header nav a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* Login form styles */
+.loginForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    max-width: 400px;
+    box-sizing: border-box;
+    padding: 2ch 5ch;
+    border: 1px solid black;
+    border-radius: 8px;
+    justify-content: center;
+}
+.loginForm label {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 100%;
+}
+.loginForm label svg {
+    box-sizing: border-box;
+    padding: .2em;
+    height: 1.7em;
+    width: 3em;
+    border: 2px solid black;
+    border-right: none;
+    border-radius: 16px 0 0 16px;
+}
+.loginForm input {
+    box-sizing: border-box;
+    padding: 0.5ch;
+    padding-left: 3ch;
+    font-size: 1rem;
+    border-radius: 0 16px 16px 0;
+    height: 2em;
+    width: calc( 100% - 3em );
+}
+.loginForm input::placeholder {
+    font-size: 0.9rem;  
+}
+.loginForm button {
+    box-sizing: border-box;
+    padding: 0.5ch 2ch;
+    border: 2px solid black;
+    border-radius: 16px;
+    height: 2em;
+    width: 150px;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+
+/* Footer Styles */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: 2ch 1ch;
+    width: 100%;
+    align-items: flex-end;
+}
+footer div:first-child {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .contactDiv {
+    display: flex;
+    padding: 2ch 0;
+    gap: 5px;
+}
+footer div:last-child {
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1ch 2ch 1ch 1ch;
+    height: calc( 2ch + 4ch );
+}

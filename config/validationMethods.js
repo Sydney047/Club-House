@@ -4,7 +4,7 @@ exports.signUpValidation = [
     body( 'username' ).trim().escape()
         .isLength( { min: 3 } ).withMessage( 'Username must be at least 3 characters long.' ),
     body( 'email' ).optional().trim().escape()
-        .isEmail().withMessage( 'Must be a valid email' ),
+        .isEmail().withMessage( 'Email must be a valid email' ),
     body( 'password' ).isLength( { min: 6 } ).withMessage( 'Password must be at least 6 characters long.' )
         .isStrongPassword({ minUppercase: 1, minLowercase: 1, minNumbers: 1, minSymbols: 1 })
         .withMessage( 'Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 symbol.' ),

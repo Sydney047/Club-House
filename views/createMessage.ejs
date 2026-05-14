@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="loggedInFormStyles.css">
     <title>Create Message</title>
 </head>
 <body>
-    <form action="/<%= user.id %>/create-new-message" method="post">
-        <h2>Create New Message</h2>
-        <% if ( locals.errors ) { %>
-            <ul>
-                <% errors.forEach( error => { %>
-                    <li><%= error.msg %></li>
-                <% } ) %>
-            </ul>
-        <% } %>
-        <label>Message Title: <input type="text" name="title"></label>
-        <br>
-        <label>Message Content: <textarea name="message"></textarea></label>
-        <br>
-        <button type="submit">Post Message</button>
-    </form>
+    <%- include( 'components/header' ) %>
+    <div class="container">
+        <form action="/<%= user.id %>/create-new-message" method="post">
+            <h2>Create New Message</h2>
+            <% if ( locals.errors ) { %>
+                <ul>
+                    <% errors.forEach( error => { %>
+                        <li><%= error.msg %></li>
+                    <% } ) %>
+                </ul>
+            <% } %>
+            <label>Message Title: <input type="text" name="title"></label>
+            <br>
+            <label>Message Content: <textarea name="message"></textarea></label>
+            <br>
+            <button type="submit">Post Message</button>
+        </form>
+    </div>
+    <%- include( 'components/footer' ) %>
 </body>
 </html>

@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="loggedInFormStyles.css">
     <title>Gain Membership</title>
 </head>
 <body>
-    <form action="/<%= user.id %>/become-member" method="post">
-        <label>Enter Clubhouse Password: <input type="text" name="clubhousePassword"></label>
-        <button type="submit">Submit</button>
-    </form>
+    <%- include( 'components/header' ) %>
+    <div class="container">
+        <form action="/<%= user.id %>/become-member" method="post">
+            <label>Enter Clubhouse Password: <input type="text" name="clubhousePassword"></label>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <%- include( 'components/footer' ) %>
 </body>
 </html>
