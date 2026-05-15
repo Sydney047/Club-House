@@ -1,9 +1,9 @@
 const { body } = require( 'express-validator');
 
 exports.signUpValidation = [
-    body( 'username' ).trim().escape()
+    body( 'username' ).trim()
         .isLength( { min: 3 } ).withMessage( 'Username must be at least 3 characters long.' ),
-    body( 'email' ).optional().trim().escape()
+    body( 'email' ).optional().trim()
         .isEmail().withMessage( 'Email must be a valid email' ),
     body( 'password' ).isLength( { min: 6 } ).withMessage( 'Password must be at least 6 characters long.' )
         .isStrongPassword({ minUppercase: 1, minLowercase: 1, minNumbers: 1, minSymbols: 1 })
@@ -16,13 +16,13 @@ exports.signUpValidation = [
 ]
 
 exports.loginValidation = [
-    body( 'username' ).trim().escape()
+    body( 'username' ).trim()
         .notEmpty().withMessage( 'Username is required.' ),
     body( 'password' ).notEmpty().withMessage( 'Password is required.' )
 ]
 //message validation
 exports.messageValidation = [
-    body( 'title' ).trim().escape()
+    body( 'title' ).trim()
         .isLength( { min: 3, max: 50 } ).withMessage( 'Message title must be between 3 and 50 characters long.' ),
     body( 'message' ).trim().escape()
         .isLength( { min: 10, max: 500 } ).withMessage( 'Message content must be between 10 and 500 characters long.' )
