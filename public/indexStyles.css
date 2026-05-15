@@ -1,11 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabriela&family=Patrick+Hand&display=swap');
+
+@font-face {
+    font-family: 'logoFont';
+    src: url( './Kola-Regular.woff' ) format( 'woff' );
+}
+:root {
+    --primaryColor: #1F6F5F;
+    --secondaryColor: #6FCF97;
+    --header-shadow: 0 7px 10px rgba(0, 0, 0, .4), inset 0 6px 5px #6fcf9776;
+    --card-shadow: 0 7px 10px rgba(0, 0, 0, .4), inset 0 1px 5px #6fcf9776;
+    --button-shadow: inset 2px 4px 6px rgba(0, 0, 0, .3), 3px 4px 6px 1px #6fcf9769;
+}
+
+body {
+    background-color: #1f6f5f;
+    background-image:
+        url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%236fcf97' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
 /* Header Styles */
 header {
     display: flex;
     box-sizing: border-box;
-    padding: 1ch;
+    padding: 1ch 4ch;
     width: 100%;
     align-items: center;
     gap: 4px;
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur( 2px );
+    color: #454040;
+    box-shadow: var( --header-shadow );
 }
 header svg, footer svg {
     height: 3ch;
@@ -14,6 +38,7 @@ header svg, footer svg {
 header span {
     font-size: 1.5rem;
     font-weight: bold;
+    font-family: 'logoFont', sans-serif;
 }
 header nav {
     margin-left: auto;
@@ -28,21 +53,46 @@ header nav a {
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
+    color: black;
+}
+header nav a:hover {
+    color: var( --secondaryColor );
+}
+header nav a:last-child {
+    /* width: 150px;
+    height: 30px; */
+    background-color: var( --primaryColor );
+    color: var( --secondaryColor );
+    padding: .5ch 4ch;
+    border-radius: 8px;
+    border: none;
+    box-shadow: var( --button-shadow );
+}
+header nav a:last-child:hover {
+    outline: 2px solid var( --secondaryColor );
+}
+.activeUser > p, .inactiveUser > p {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2em;
 }
 
 /* Online Container Styles */
 .onlineContainer {
     display: grid;
-    grid-template: 1fr / clamp(150px, 15%, 300px) 3fr;
+    grid-template: 1fr / clamp(130px, 15%, 300px) 3fr;
 }
 .onlineContainer nav {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
     padding: 1ch;
     box-sizing: border-box;
     align-items: center;
     padding: 5ch 0;
+    backdrop-filter: blur( 2px );
+    border: 2px solid black;
+    border-radius: 16px;
+    margin-top: 8px;
 }
 .onlineContainer nav div {
     display: flex;
@@ -50,6 +100,7 @@ header nav a {
     align-items: center;
     font-size: 1.8em;
     font-weight: bold;
+    margin-bottom: 32px;
 }
 .onlineContainer nav div svg:first-child {
     height: 1.1em;
@@ -78,6 +129,19 @@ header nav a {
     display: flex;
     gap: 4px;
     align-items: center;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+.onlineContainer nav a {
+    font-size: 1.05em;
+    font-weight: bold;
+}
+.onlineContainer nav a:hover {
+    transform: scale( 1.1 );
+}
+.onlineContainer nav a:last-child {
+    margin-top: 40px;
 }
 .onlineContainer nav svg {
     height: 1.3em;
@@ -96,6 +160,7 @@ header nav a {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+    justify-content: center;
 }
 .onlineContainer main ul li span {
     align-self: flex-start;
@@ -128,15 +193,19 @@ ul li {
     list-style: none;
     box-sizing: border-box;
     padding: 2ch;
-    border: 2px solid black;
     border-radius: 8px;
     width: clamp( 250px, 32%, 400px );
     display: flex;
     flex-direction: column;
     align-items: center;
+    backdrop-filter: blur( 1.5px );
+    box-shadow: var( --card-shadow );
+}
+ul li:hover {
+    box-shadow: 0 7px 10px rgba(0, 0, 0, .8), inset 0 3px 5px #6fcf97d1;;
 }
 .inactiveUser span {
-    filter: blur( 5px );
+    filter: blur( 3px );
 }
 div ul li span {
     align-self: flex-start;
@@ -151,7 +220,7 @@ div ul li span svg:nth-child(2) {
     align-self: center;
 }
 div ul li h3 {
-    margin: 8px 0 4px 0;
+    margin: 8px 0 2px 0;
 }
 div ul li p {
     width: 100%;
@@ -180,6 +249,7 @@ footer {
     padding: 2ch 1ch;
     width: 100%;
     align-items: flex-end;
+    backdrop-filter: blur( 5px );
 }
 footer div:first-child {
     box-sizing: border-box;
@@ -201,4 +271,16 @@ footer div:last-child {
     align-items: center;
     padding: 1ch 2ch 1ch 1ch;
     height: calc( 2ch + 4ch );
+}
+footer button {
+    color: var(--primaryColor);
+    font-weight: bold;
+    border: 2px solid var( --primaryColor );
+    backdrop-filter: blur( 5px );
+    padding: 5px 7px;
+    border-radius: 8px;
+}
+footer button:hover {
+    transform: scale( 1.1 );
+    cursor: pointer;
 }

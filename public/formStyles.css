@@ -1,11 +1,34 @@
+@font-face {
+    font-family: 'logoFont';
+    src: url( './Striper-Regular.woff' ) format( 'woff' );
+}
+:root {
+    --primaryColor: #1F6F5F;
+    --secondaryColor: #6FCF97;
+    --header-shadow: 0 7px 10px rgba(0, 0, 0, .4), inset 0 6px 5px #6fcf9776;
+    --card-shadow: 0 7px 10px rgba(0, 0, 0, .4), inset 0 1px 5px #6fcf9776;
+    --button-shadow: inset 2px 4px 6px rgba(0, 0, 0, .3), 3px 4px 6px 1px #6fcf9769;
+}
+
+body {
+    background-color: #1f6f5f;
+    background-image:
+        url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%236fcf97' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
 /* Header Styles */
 header {
     display: flex;
     box-sizing: border-box;
-    padding: 1ch;
+    padding: 1ch 4ch;
     width: 100%;
     align-items: center;
     gap: 4px;
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur( 2px );
+    color: #454040;
+    box-shadow: var( --header-shadow );
 }
 header svg, footer svg {
     height: 3ch;
@@ -14,6 +37,7 @@ header svg, footer svg {
 header span {
     font-size: 1.5rem;
     font-weight: bold;
+    font-family: 'logoFont';
 }
 header nav {
     margin-left: auto;
@@ -28,12 +52,28 @@ header nav a {
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
+    color: black;
+}
+header nav a:hover {
+    color: var( --secondaryColor );
+}
+header nav a:last-child {
+    background-color: var( --primaryColor );
+    color: var( --secondaryColor );
+    padding: .5ch 4ch;
+    border-radius: 8px;
+    border: none;
+    box-shadow: var( --button-shadow );
+}
+header nav a:last-child:hover {
+    outline: 2px solid var( --secondaryColor );
 }
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 4ch;
 }
 /* Login form styles */
 .loginForm {
@@ -43,9 +83,10 @@ header nav a {
     max-width: 400px;
     box-sizing: border-box;
     padding: 2ch 5ch;
-    border: 1px solid black;
     border-radius: 8px;
     justify-content: center;
+    box-shadow: var( --header-shadow);
+    backdrop-filter: blur( 1px );
 }
 .loginForm label {
     display: flex;
@@ -60,7 +101,6 @@ header nav a {
     height: 1.7em;
     width: 3em;
     border: 2px solid black;
-    border-right: none;
     border-radius: 16px 0 0 16px;
 }
 .loginForm input {
@@ -68,22 +108,38 @@ header nav a {
     padding: 0.5ch;
     padding-left: 3ch;
     font-size: 1rem;
+    border: none;
     border-radius: 0 16px 16px 0;
     height: 2em;
     width: calc( 100% - 3em );
+    background-color: var( --primaryColor );
+    box-shadow: var( --button-shadow );
+    color: var( --secondaryColor );
 }
 .loginForm input::placeholder {
-    font-size: 0.9rem;  
+    font-size: 0.9rem;
+    color: black;
+}
+.loginForm input:focus {
+    outline: 2px solid var( --secondaryColor );
 }
 .loginForm button {
     box-sizing: border-box;
     padding: 0.5ch 2ch;
-    border: 2px solid black;
+    border: none;
     border-radius: 16px;
-    height: 2em;
+    height: 2.5em;
     width: 150px;
     cursor: pointer;
     margin-top: 16px;
+    /* background-color: transparent; */
+    color: var(--primaryColor);
+    font-weight: bold;
+    border: 2px solid var( --primaryColor );
+    backdrop-filter: blur( 5px );
+}
+.loginForm button:hover {
+    transform: scale( 1.1 );
 }
 
 
@@ -96,6 +152,7 @@ footer {
     padding: 2ch 1ch;
     width: 100%;
     align-items: flex-end;
+    backdrop-filter: blur( 5px );
 }
 footer div:first-child {
     box-sizing: border-box;
@@ -117,4 +174,16 @@ footer div:last-child {
     align-items: center;
     padding: 1ch 2ch 1ch 1ch;
     height: calc( 2ch + 4ch );
+}
+footer button {
+    color: var(--primaryColor);
+    font-weight: bold;
+    border: 2px solid var( --primaryColor );
+    backdrop-filter: blur( 5px );
+    padding: 5px 7px;
+    border-radius: 8px;
+}
+footer button:hover {
+    transform: scale( 1.1 );
+    cursor: pointer;
 }
