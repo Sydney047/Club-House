@@ -88,6 +88,9 @@ header nav a:last-child:hover {
     box-shadow: var( --header-shadow);
     backdrop-filter: blur( 1px );
 }
+.loginForm ul li {
+    color: #960018;
+}
 .loginForm label {
     display: flex;
     align-items: center;
@@ -106,7 +109,7 @@ header nav a:last-child:hover {
 .loginForm input {
     box-sizing: border-box;
     padding: 0.5ch;
-    padding-left: 3ch;
+    padding-left: 1ch;
     font-size: 1rem;
     border: none;
     border-radius: 0 16px 16px 0;

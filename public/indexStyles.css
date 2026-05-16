@@ -98,7 +98,7 @@ header nav a:last-child:hover {
     display: flex;
     gap: 4px;
     align-items: center;
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 32px;
 }
@@ -300,6 +300,9 @@ footer button:hover {
         padding: 16px;
         border: none;
         align-items: center;
+    }
+    .onlineContainer nav a {
+        text-decoration: underline;
     }
     .onlineContainer nav div {
         width: 100%;
