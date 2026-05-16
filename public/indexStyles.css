@@ -286,3 +286,43 @@ footer button:hover {
     transform: scale( 1.1 );
     cursor: pointer;
 }
+
+/* Mobile Styles */
+@media ( max-width: 600px ) {
+    .onlineContainer {
+        display: flex;
+        flex-direction: column;
+    }
+    .onlineContainer nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        padding: 16px;
+        border: none;
+        align-items: center;
+    }
+    .onlineContainer nav div {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        padding: 8px 16px;
+        align-self: flex-start;
+        font-size: 1.5em;
+        /* padding: 8px 16px; */
+    }
+    .onlineContainer nav svg {
+        display: none;
+    }
+    .onlineContainer nav div svg, .onlineContainer nav p svg {
+        display: inline-block;
+    }
+    .onlineContainer nav a:last-child {
+        margin-top: 0;
+    }
+    .onlineContainer main h1, .onlineContainer main span {
+        display: none;
+    }
+    .onlineContainer main ul h1, .onlineContainer main ul span {
+        display: inline-block;
+    }
+}
