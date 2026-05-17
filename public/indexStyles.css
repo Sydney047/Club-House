@@ -144,8 +144,8 @@ header nav a:last-child:hover {
     margin-top: 40px;
 }
 .onlineContainer nav svg {
-    height: 1.3em;
-    width: 1.3em;
+    height: 1.2em;
+    width: 1.2em;
 }
 .onlineContainer main {
     display: flex;
@@ -155,6 +155,10 @@ header nav a:last-child:hover {
 }
 .onlineContainer main span {
     width: 100%;
+}
+.onlineContainer main ul h3 {
+    position: relative;
+    top: 1.5ch;
 }
 .onlineContainer main ul {
     display: flex;
@@ -195,7 +199,7 @@ ul li {
     list-style: none;
     box-sizing: border-box;
     padding: 2ch;
-    border-radius: 8px;
+    border-radius: 12px;
     width: clamp( 250px, 32%, 400px );
     display: flex;
     flex-direction: column;
@@ -296,19 +300,30 @@ footer button:hover {
     .onlineContainer nav {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: center;
         padding: 16px;
         border: none;
         align-items: center;
     }
     .onlineContainer nav a {
-        text-decoration: underline;
+        color: var( --primaryColor );
+        border: 2px solid var( --primaryColor );
+        backdrop-filter: blur( 5px );
+        padding: 5px 7px;
+        border-radius: 8px;
+        background-color: whitesmoke;
+        font-size: 1em;
+    }
+    .onlineContainer nav a:hover {
+        transform: scale( 1.1 );
+        cursor: pointer;
     }
     .onlineContainer nav div {
         width: 100%;
         display: flex;
         gap: 8px;
-        padding: 8px 16px;
+        padding: 0;
+        margin: 0;
         align-self: flex-start;
         font-size: 1.5em;
         /* padding: 8px 16px; */
@@ -325,7 +340,13 @@ footer button:hover {
     .onlineContainer main h1, .onlineContainer main span {
         display: none;
     }
+    .onlineContainer main ul {
+        padding: 0;
+    }
     .onlineContainer main ul h1, .onlineContainer main ul span {
         display: inline-block;
+    }
+    footer {
+        font-size: .7em;
     }
 }
